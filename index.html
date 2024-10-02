@@ -1,0 +1,179 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teresa-Mikholas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="hamburger">☰</div>
+        <div class="theme-toggle">
+            <span id="moon-icon" class="icon">&#127769;</span>
+            <span id="sun-icon" class="icon" style="display:none;">&#9728;</span>
+        </div>
+        <ul class="menu">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#music">Koleksi Musik</a></li>
+            <li><a href="#kenangan">Kenangan</a></li>
+            <li><a href="#harapan">Harapan</a></li>
+            <li><a href="#comments">Komentar</a></li>
+        </ul>
+    </div>
+    <section id="home">
+        <h1>Haiii Selamat Melihat-Lihat Kenangan Kita</h1>
+        <div class="gallery">
+            <h2>Galeri Foto & Video</h2>
+            <div class="gallery-item">
+                <img src="img/fotomiki.jpg" alt="Kenangan 1">
+                <img src="img/fototere.jpg" alt="Kenangan 2">
+            </div>
+            <div class="gallery-item">
+                <video controls src="img/videokorelase.mp4"></video>
+            </div>
+        </div>
+    </section>
+    <section id="music">
+        <h2>Koleksi Musik</h2>
+        <div class="music-collection">
+            <div class="music-card">
+                <img src="img/fotokumusic.jpg" alt="Die With A Smile">
+                <h3>Die With A Smile</h3>
+                <audio controls>
+                    <source src="audio/Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video).mp3" type="audio/mpeg">
+                </audio>
+                <button class="like-button">❤️ Like</button>
+            </div>
+            <div class="music-card">
+                <img src="img/fotomumusic.jpg" alt="Forever Young">
+                <h3>Forever Young</h3>
+                <audio controls>
+                    <source src="audio/Alphaville - Forever Young ~Official Video.mp3" type="audio/mpeg">
+                </audio>
+                <button class="like-button">❤️ Like</button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="kenangan">
+        <h2>Kenangan Kita</h2>
+        <p>Membahas Berbagai Hal Meskipun Respon Hanya "Hah? Hah? Apa? Ga Kedengeran"</p>
+        <div class="kenangan-gallery">
+            <div class="kenangan-item">
+                <img src="img/kenangan2.jpg" alt="Kenangan 1">
+                <p>Kenangan indah saat perjalanan kita.</p>
+            </div>
+            <div class="kenangan-item">
+                <img src="img/kenangan1.jpg" alt="Kenangan 2">
+                <p>Moment spesial yang tak terlupakan.</p>
+            </div>
+        </div>
+    </section>    
+    
+    <section id="harapan">
+        <h2 style="color: green;">Harapan Kita</h2>
+        <p style="color: green;">Bahagia Tanpa Menyakiti Satu Sama Lain</p>
+        <div class="harapan-list">
+            <div class="harapan-item">
+                <h3 style="color: red;">Harapan Miki</h3>
+                <p style="color: red;">Semoga kamu dikasih kesabaran sebesar mungkin buat menghadapi kesabaranku yang setipis tisu</p>
+            </div>
+            <div class="harapan-item">
+                <h3 style="color: blue;">Harapan Tere</h3>
+                <p style="color: blue;">Komunikasi yang baik, komunikasi yang jujur dan selalu terbuka satu sama lain</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="comments">
+        <h2>Komentar</h2>
+        <div class="comments-section">
+            <div class="comment-form">
+                <input type="text" id="name" placeholder="Nama" required>
+                <textarea id="comment" placeholder="Tinggalkan komentar..." required></textarea>
+                <button id="submit-button" type="submit">Kirim</button>
+            </div>
+            <div class="comments-list">
+                <!-- Komentar yang akan ditambahkan di sini -->
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <h3>Ikuti Kami di Media Sosial</h3>
+        <ul class="social-media">
+            <li><a href="https://www.instagram.com/mikholasandiw?igsh=MXAxaXBnazE2cmt6bQ==">IG:@Mikholasandiw</a></li>
+            <li><a href="https://www.instagram.com/madebyniacaa?igsh=MTk0Z21peWwycjZ1bQ==">IG:@madebyniacaa</a></li>
+        </ul>
+    </footer>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu');
+        const moonIcon = document.getElementById('moon-icon');
+        const sunIcon = document.getElementById('sun-icon');
+        const body = document.body;
+        const commentForm = document.querySelector('.comment-form');
+        const commentsList = document.querySelector('.comments-list');
+        const likeButtons = document.querySelectorAll('.like-button');
+
+        hamburger.addEventListener('click', () => {
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        moonIcon.addEventListener('click', () => {
+            body.classList.add('dark-mode');
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'inline';
+        });
+
+        sunIcon.addEventListener('click', () => {
+            body.classList.remove('dark-mode');
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'inline';
+        });
+
+        likeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (button.textContent === '❤️ Like') {
+                    button.textContent = '❤️ Liked';
+                } else {
+                    button.textContent = '❤️ Like';
+                }
+            });
+        });
+
+        document.getElementById('submit-button').addEventListener('click', (e) => {
+            e.preventDefault(); // Mencegah pengiriman form
+
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+
+            // Mendapatkan tanggal dan waktu saat ini
+            const now = new Date();
+            const options = { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false // untuk format 24 jam
+            };
+            const dateTime = now.toLocaleString('id-ID', options); // Mengatur format tanggal ke Indonesia
+
+            // Membuat elemen komentar baru
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<h4>${name}</h4><p>${comment}</p><small>${dateTime}</small>`; // Menambahkan tanggal dan waktu
+
+            // Menambahkan komentar ke bagian komentar
+            commentsList.appendChild(newComment);
+
+            // Reset form
+            commentForm.reset();
+        });
+        
+    </script>
+</body>
+</html>

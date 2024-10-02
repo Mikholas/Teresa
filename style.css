@@ -1,0 +1,294 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s, color 0.3s; /* Transisi untuk perubahan warna */
+}
+
+.navbar {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    position: relative;
+    transition: background-color 0.3s; /* Transisi untuk navbar */
+}
+
+.hamburger {
+    cursor: pointer;
+    font-size: 24px;
+    display: inline-block;
+}
+
+.menu {
+    list-style-type: none;
+    display: none; /* hidden by default */
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    z-index: 1;
+}
+
+.menu li {
+    display: block; /* each item takes a full line */
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    background-color: #333; /* darker background on hover */
+}
+
+.gallery {
+    text-align: center;
+}
+
+.gallery-item {
+    display: inline-block;
+    margin: 10px;
+    transition: transform 0.3s; /* animation for hover effect */
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* scale up on hover */
+}
+
+.gallery img, .gallery video {
+    width: 300px;
+    border-radius: 10px; /* rounded corners */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s; /* Transisi untuk footer */
+}
+
+.social-media {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-media li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.social-media li a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-media li a:hover {
+    text-decoration: underline; /* underline on hover */
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #121212; /* dark background */
+    color: white; /* light text color */
+}
+
+.dark-mode .navbar {
+    background-color: #1e1e1e; /* Navbar gelap */
+}
+
+.dark-mode footer {
+    background-color: #1e1e1e; /* Footer gelap */
+}
+
+.dark-mode .comments-section {
+    background-color: #2a2a2a; /* Background komentar gelap */
+}
+
+.dark-mode .comment {
+    background-color: #333; /* Background komentar individual */
+    color: white; /* Warna teks komentar */
+}
+
+.comments-section {
+    margin-top: 20px;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column; /* Susun kolom secara vertikal */
+    margin-bottom: 20px; /* Spasi di bawah form */
+}
+
+.comment-form input,
+.comment-form textarea {
+    margin-bottom: 10px; /* Spasi antar kolom */
+    padding: 10px; /* Padding untuk input dan textarea */
+    border-radius: 5px; /* Sudut melingkar */
+    border: 1px solid #ccc; /* Batas untuk input */
+}
+
+.comment-form button {
+    background-color: #007BFF; /* Warna tombol */
+    color: white; /* Warna teks tombol */
+    border: none; /* Hilangkan border default */
+    border-radius: 5px; /* Sudut melingkar */
+    padding: 10px; /* Padding untuk tombol */
+    cursor: pointer; /* Cursor pointer saat hover */
+}
+
+.comment-form button:hover {
+    background-color: #0056b3; /* Warna saat hover pada tombol */
+}
+
+.comments-list {
+    margin-top: 20px; /* Spasi di atas daftar komentar */
+}
+
+.comment {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px; /* Rounded corners for comments */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.comment:hover {
+    background-color: #444; /* Warna saat hover pada komentar */
+}
+
+/* CSS untuk tampilan koleksi musik */
+.music-collection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Membuat jarak antar musik */
+    margin: 25px 0; /* Jarak atas dan bawah untuk koleksi musik */
+}
+
+.music-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 25px;
+    width: 320px; /* Meningkatkan lebar kotak musik */
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.music-card:hover {
+    transform: scale(1.05);
+}
+
+.music-card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.music-card h3 {
+    margin: 10px 0 5px;
+}
+
+.music-card p {
+    margin: 5px 0 10px;
+    font-size: 14px;
+}
+
+.audio-control {
+    width: 100%; /* Membuat kontrol audio lebih lebar */
+    margin: 10px 0;
+}
+
+.like-button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.like-button:hover {
+    background-color: #e91e63;
+}
+
+/* Agar teks di bagian tertentu berada di tengah */
+#home h1, #music h2, #kenangan h2, #harapan h2 {
+    text-align: center;
+    margin-top: 5px; /* Memberi sedikit jarak antara heading dan paragraf */
+}
+
+/* Agar konten di section memiliki layout center secara vertikal dan horizontal */
+#home, #music, #kenangan, #harapan, #comments {
+    display: flex;
+    flex-direction: column; /* Agar konten di dalam section tersusun secara vertikal */
+    justify-content: center; /* Memusatkan konten secara horizontal */
+    align-items: center; /* Memusatkan konten secara vertikal */
+    min-height: 100vh; /* Agar section mengambil setinggi layar untuk tengah vertikal */
+    margin: 20px 0; /* Menambahkan jarak atas dan bawah untuk setiap section */
+}
+
+/* Penyesuaian margin untuk paragraf agar terlihat rapi */
+#kenangan p, #harapan p {
+    margin-top: 10px; /* Memberi sedikit jarak antara heading dan paragraf */
+}
+
+#kenangan img {
+    width: 100%; /* Mengatur lebar gambar agar responsif */
+    max-width: 300px; /* Maksimal lebar gambar untuk mencegah gambar terlalu besar */
+    height: auto; /* Memastikan rasio aspek gambar tetap */
+    border-radius: 10px; /* Sudut melingkar untuk gambar */
+    margin: 10px 0; /* Jarak atas dan bawah untuk gambar */
+}
+
+.kenangan-gallery {
+    display: flex; /* Menampilkan item secara fleksibel (bersebelahan) */
+    justify-content: center; /* Memusatkan konten secara horizontal */
+    gap: 20px; /* Jarak antar item */
+    margin-top: 20px; /* Margin atas untuk jarak dari teks sebelumnya */
+}
+
+.kenangan-item {
+    text-align: center; /* Memusatkan teks di bawah gambar */
+}
+
+.kenangan-item img {
+    width: 100%; /* Mengatur lebar gambar agar responsif */
+    max-width: 300px; /* Maksimal lebar gambar untuk mencegah gambar terlalu besar */
+    height: auto; /* Memastikan rasio aspek gambar tetap */
+    border-radius: 10px; /* Sudut melingkar untuk gambar */
+}
+
+.harapan-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.harapan-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 20px;
+    width: 280px; /* Menentukan lebar kartu */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Transisi untuk efek hover */
+}
+
+.harapan-item:hover {
+    transform: translateY(-5px); /* Mengangkat kartu saat hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Efek bayangan lebih kuat saat hover */
+}
+
+/* Penyesuaian jarak atas dan bawah antar section */
+section {
+    padding: 40px 20px; /* Penyesuaian padding */
+    margin: 0; /* Menghapus margin default */
+}
